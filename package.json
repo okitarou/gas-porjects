@@ -1,0 +1,24 @@
+{
+  "name": "gas-projects",
+  "version": "1.0.0",
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.5.1"
+  },
+  "private": false,
+  "author": "okitarou",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.63"
+  },
+  "scripts": {
+    "login": "clasp login",
+    "create-project": "clasp create --title ${npm_config_project_name} --rootDir ./ && sh create-project.sh ${npm_config_project_name}",
+    "push:integration-google-calendar": "npm run clasp-push --prefix ./packages/integration-google-calendar"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
