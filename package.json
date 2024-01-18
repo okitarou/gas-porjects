@@ -11,11 +11,21 @@
   "description": "",
   "devDependencies": {
     "@google/clasp": "^2.4.2",
-    "@types/google-apps-script": "^1.0.63"
+    "@types/google-apps-script": "^1.0.63",
+    "@types/yargs": "^17.0.32",
+    "gas-webpack-plugin": "^2.5.0",
+    "ncp": "^2.0.0",
+    "rimraf": "^5.0.5",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "yargs": "^17.7.2"
   },
   "scripts": {
     "login": "clasp login",
-    "create-project": "clasp create --title ${npm_config_project_name} --rootDir ./ && sh create-project.sh ${npm_config_project_name}",
+    "create-project": "clasp create --title ${npm_config_project_name} --rootDir ./ && ts-node create-project.ts --project_name=${npm_config_project_name}",
     "push:integration-google-calendar": "npm run clasp-push --prefix ./packages/integration-google-calendar"
   },
   "workspaces": [
