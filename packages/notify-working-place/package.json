@@ -1,0 +1,7 @@
+{
+  "name": "notify-working-place",
+  "version": "0.0.1",
+  "scripts": {
+    "clasp-push": "webpack && ncp appsscript.json dist/appsscript.json && clasp push"
+  }
+}

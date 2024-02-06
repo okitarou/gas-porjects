@@ -26,7 +26,8 @@
   "scripts": {
     "login": "clasp login",
     "create-project": "clasp create --title ${npm_config_project_name} --rootDir ./ && ts-node create-project.ts --project_name=${npm_config_project_name}",
-    "push:integration-google-calendar": "npm run clasp-push --prefix ./packages/integration-google-calendar"
+    "push:integration-google-calendar": "npm run clasp-push --prefix ./packages/integration-google-calendar",
+    "push:notify-working-place": "npm run clasp-push --prefix ./packages/notify-working-place"
   },
   "workspaces": [
     "packages/*"
