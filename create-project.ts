@@ -141,7 +141,7 @@ async function main() {
    **/
   try {
     const packageObject = require(packageJsonPath);
-    packageObject.scripts[`push:${projectName}`] = `npm run clasp-push --prefix ./packages/${projectName}'`;
+    packageObject.scripts[`push:${projectName}`] = `npm run clasp-push --prefix ./packages/${projectName}`;
     const content = JSON.stringify(packageObject, null, 2);
     writeFileSync(packageJsonPath, content);
   } catch (error) {
