@@ -2,3 +2,5 @@
 .DS_Store
 **/dist
 **/.clasp.json
+**/.clasprc.json
+**/client_secret.json

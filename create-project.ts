@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync, existsSync, unlinkSync, copyFileSync } from 'fs';
 import { resolve } from 'path';
-import { parse } from 'yargs';
+import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 const currentDir = __dirname;
@@ -9,7 +9,7 @@ const backupPackageJsonPath = resolve(currentDir, `./bk_package.json`);
 
 async function main() {
   copyFileSync(packageJsonPath, backupPackageJsonPath);
-  const argv = await parse(hideBin(process.argv));
+  const argv = await yargs(hideBin(process.argv)).parse();
   if (!argv.project_name) {
     throw new Error('プロジェクト名を指定してください。');
   }
